@@ -8,3 +8,7 @@ if err := m.Send(); err != nil {
 	panic(err)
 }
 ```
+
+Licence:
+
+Beer if male or Kiss if female
