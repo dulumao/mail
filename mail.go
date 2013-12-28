@@ -45,8 +45,5 @@ func (m *Mail) Send() error {
 	cmd := exec.Command("sendmail", "-t", "-i")
 	cmd.Stdin = b
 	err := cmd.Run()
-	if err != nil {
-		return err
-	}
-	return nil
+	return err
 }
