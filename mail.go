@@ -17,13 +17,12 @@ type Mail struct {
 }
 
 func NewMail(from string, to []string, subject string, body string) *Mail {
-	m := &Mail{
+	return &Mail{
 		From:    from,
 		To:      to,
 		Subject: subject,
 		Body:    body,
 	}
-	return m
 }
 
 func (m *Mail) Send() error {
@@ -44,6 +43,5 @@ func (m *Mail) Send() error {
 	b.WriteString(m.Body)
 	cmd := exec.Command("sendmail", "-t", "-i")
 	cmd.Stdin = b
-	err := cmd.Run()
-	return err
+	return cmd.Run()
 }
