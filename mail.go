@@ -37,6 +37,7 @@ func (m *Mail) Send() error {
 	b.WriteString("Date: " + time.Now().Format("Mon, 2 Jan 2006 15:04:05 -0700") + CRLF)
 	b.WriteString("From: " + m.From + CRLF)
 	b.WriteString("To: " + recipients + CRLF)
+	b.WriteString("Reply-To: " + m.From + CRLF)
 	b.WriteString("Subject: " + m.Subject + CRLF)
 	b.WriteString("MIME-Version: 1.0" + CRLF)
 	b.WriteString("Content-Type: text/plain; charset=utf-8\n")
